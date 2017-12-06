@@ -68,5 +68,9 @@
 
   [JPUSHService setBadge:value];
   NSLog(@"send badge:%d to jpush server", value);
+  
+  NSUserDefaults *shared = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.luxcon.test.Extension"];
+  NSString *str = [shared objectForKey:@"Today_Extension_data"];
+  [[[UIAlertView alloc] initWithTitle:str message:str delegate:nil cancelButtonTitle:@"取消" otherButtonTitles: nil] show];
 }
 @end
